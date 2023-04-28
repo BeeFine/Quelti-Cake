@@ -1,0 +1,15 @@
+{
+  "language": "en",
+  "setLocale": "ru",
+  "animations": "true",
+  "randomTitle": "false",
+  "defaultConfig": [
+    {
+      "enabled": "false"
+    },
+    {
+      "page_1": "not_assigned",
+      "page_2": "not_assigned"
+    }
+  ]
+}
