@@ -188,6 +188,28 @@ private:
     }
 
 public:
+    void fileEncryption()
+    {
+        int iInput;
+        std::string cInput;
+        std::vector<int> forEncryption;
+        text.getLanguage(SETTINGS[0], 5);
+        text.getLanguage(SETTINGS[0], 6);
+        color.set_color(CL_CYAN);
+        std::cout << "[ USER ] --> ";
+        getline(std::cin, cInput);
+        iInput = stoi(cInput);
+
+        /*
+        Проверка число ли
+        */
+
+        forEncryption = choose(cInput);
+        
+        std::string text = "";
+
+    }
+
     std::string GUIDcreate()
     {
         CoInitialize(NULL);
