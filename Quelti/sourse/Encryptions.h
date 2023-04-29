@@ -10,6 +10,46 @@ void chooseMethod(bool loop);
 class Encryptions
 {
 private:
+    void encryptionMethod(std::string input, std::vector<int> chooseM, std::string password)
+    {
+        std::ofstream key("KEYS\\" + FILE_DIRECTORY + "\\key.qlt");
+        std::ofstream message("KEYS\\" + FILE_DIRECTORY + "\\message.qlt");
+
+        int offset;
+        int numAlph;
+
+        for (char x : input)
+        {
+            offset = rand() % chooseM[0] + chooseM[1];
+            numAlph = rand() % (chooseM[2] + 1);
+            key << nums.intEncryption(numAlph, password) << " " << nums.intEncryption(offset, password) << " ";
+
+            for (int i = 0; i < offset; i++)
+            {
+                char b = rand() % 95 + 32;
+                message << b;
+            }
+
+            std::string stringKeys = forKeys(numAlph);
+            char encrSymbol = stringKeys[GLOBAL_ALPHABET.find(x)];
+
+            message << encrSymbol;
+            std::cout << encrSymbol;
+
+        }
+
+        offset = rand() % chooseM[0] + chooseM[1];
+        for (int i = 0; i < offset; i++)
+        {
+            message << char(rand() % 95 + 32);
+        }
+
+        key << " [/*/*/*/]";
+        message << " [/*/*/*/]";
+        message.close();
+        key.close();
+    }
+
     void chooseFile()
     {
         system("cls");
@@ -37,7 +77,7 @@ private:
             i++;
         }
         if (listFiles.empty()) {
-            std::cout << "Folder empty!";
+            std::cout << "\nFolder empty!\n";
             system("pause");
             chooseMethod(true);
         }
@@ -188,26 +228,76 @@ private:
     }
 
 public:
-    void fileEncryption()
+    void fileEncryption(std::string chooseInput)
     {
-        int iInput;
-        std::string cInput;
-        std::vector<int> forEncryption;
-        text.getLanguage(SETTINGS[0], 5);
-        text.getLanguage(SETTINGS[0], 6);
-        color.set_color(CL_CYAN);
-        std::cout << "[ USER ] --> ";
-        getline(std::cin, cInput);
-        iInput = stoi(cInput);
+        while (true)
+        {
+            system("cls");
+            int iInput;
+            std::vector<int> forEncryption;
+            color.clear();
+            iInput = stoi(chooseInput);
 
-        /*
-        Проверка число ли
-        */
+            if (isnum(chooseInput) == false) {
+                std::cout << "\nIt isn't num!\n";
+            }
+            else {
+                std::string password;
+                std::cout << "Enter password for encryption.\n";
+                std::cout << "[ USER ] --> ";
+                getline(std::cin, password);
+                system("cls");
+                forEncryption = choose(chooseInput);
 
-        forEncryption = choose(cInput);
-        
-        std::string text = "";
+                std::string text = "FileForEncryption\\";
+                std::string input2;
+                std::vector<std::string> filesForEncryption;
+                LPCSTR lpcstrText = text.c_str();
+                CreateDirectory(lpcstrText, NULL);
 
+                system("dir FileForEncryption /B /W > cache2.txt");
+                std::cout << "Choose file for encryption\n";
+                std::ifstream file("cache2.txt");
+                if (file) {
+                    std::string cache;
+                    int i = 1;
+                    while (!file.eof())
+                    {
+                        getline(file, cache);
+                        filesForEncryption.push_back(cache);
+                        std::cout << i << ". " << cache << std::endl;
+                    }
+                    file.close();
+                    system("del cache2.txt");
+                    getline(std::cin, input2);
+                    if (atoi(input2.c_str()) != 0) {
+                        std::ifstream fileEncr(filesForEncryption[atoi(input2.c_str())-1]);
+                        if (fileEncr) {
+                            /*#################################*/
+
+                            FILE_DIRECTORY = filesForEncryption[atoi(input2.c_str())-1];
+                            while (!fileEncr.eof())
+                            {
+                                std::string cache;
+                                getline(fileEncr, cache);
+                                encryptionMethod(cache, forEncryption, password);
+                            }
+
+                            /*#################################*/
+                        }
+                        else {
+                            std::cout << "\nError!\n";
+                        }
+                    }
+                    else {
+                        std::cout << "\nIncorrect number\n";
+                    }
+                }
+                else {
+                    std::cout << "\nError!\n";
+                }
+            }
+        }
     }
 
     std::string GUIDcreate()
@@ -296,42 +386,8 @@ public:
         color.set_intensity(true);
         color.set_color(CL_GREEN);
 
-        std::ofstream key("KEYS\\" + FILE_DIRECTORY + "\\key.qlt");
-        std::ofstream message("KEYS\\" + FILE_DIRECTORY + "\\message.qlt");
+        encryptionMethod(input, chooseM, password);
 
-        int offset;
-        int numAlph;
-
-        for (char x : input)
-        {
-            offset = rand() % chooseM[0] + chooseM[1];
-            numAlph = rand() % (chooseM[2] + 1);
-            key << nums.intEncryption(numAlph, password) << " " << nums.intEncryption(offset, password) << " ";
-
-            for (int i = 0; i < offset; i++)
-            {
-                char b = rand() % 95 + 32;
-                message << b;
-            }
-            
-            std::string stringKeys = forKeys(numAlph);
-            char encrSymbol = stringKeys[GLOBAL_ALPHABET.find(x)];
-
-            message << encrSymbol;
-            std::cout << encrSymbol;
-
-        }
-
-        offset = rand() % chooseM[0] + chooseM[1];
-        for (int i = 0; i < offset; i++)
-        {
-            message << char(rand() % 95 + 32);
-        }
-
-        key << " [/*/*/*/]";
-        message << " [/*/*/*/]";
-        message.close();
-        key.close();
         color.clear();
         std::cout << std::endl << "    " << char(24) << "\n   This string is not the final encrypted message!";
         system("pause > \"%temp%\\cache.txt\"");

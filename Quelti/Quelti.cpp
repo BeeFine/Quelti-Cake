@@ -92,7 +92,8 @@ void chooseMethod(bool loop)           // Выбор шифрования или
         color.set_color(CL_WHITE);
         answer += userInput[0];
 
-        encr.encryption(GLOBAL_ALPHABET, answer);
+        if(answer[0] == '1') encr.encryption(GLOBAL_ALPHABET, answer);
+        if (answer[0] == '2') encr.fileEncryption(answer);
         chooseMethod(true);
     }
     if (userInput[0] == '2') {
