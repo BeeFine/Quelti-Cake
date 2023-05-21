@@ -1,4 +1,4 @@
-# Quelti
+# QueltiLock
 This project was created for safe text storage on the Internet. It is still in development. Please report any bugs you find, it will really help improve the project;)
 
 ## List of functions
