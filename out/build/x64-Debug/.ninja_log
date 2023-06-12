@@ -1,0 +1,8 @@
+# ninja log v5
+1	499	7083051069595824	Quelti/CMakeFiles/QueltiLock.dir/hash-library-master/sha3.cpp.obj	cc1459a732747eb7
+2	500	7083051069595824	Quelti/CMakeFiles/QueltiLock.dir/Languages/languages.cpp.obj	c637ac4dfe31d5
+0	928	7083051073895826	Quelti/CMakeFiles/QueltiLock.dir/QueltiLock.cpp.obj	bfcae9bbd477b5f8
+3	986	7083051074465825	Quelti/CMakeFiles/QueltiLock.dir/GUI.cpp.obj	cce610a7ec68f983
+986	1124	7083051075795837	Quelti/QueltiLock.exe	28914d149c3f288e
+1	924	7083051191295830	Quelti/CMakeFiles/QueltiLock.dir/QueltiLock.cpp.obj	bfcae9bbd477b5f8
+925	991	7083051191835828	Quelti/QueltiLock.exe	28914d149c3f288e
