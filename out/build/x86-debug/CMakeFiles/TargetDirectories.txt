@@ -1,0 +1,3 @@
+C:/Users/SystemX/source/repos/QueltiLock/out/build/x86-debug/CMakeFiles/QueltiLock.dir
+C:/Users/SystemX/source/repos/QueltiLock/out/build/x86-debug/CMakeFiles/edit_cache.dir
+C:/Users/SystemX/source/repos/QueltiLock/out/build/x86-debug/CMakeFiles/rebuild_cache.dir
