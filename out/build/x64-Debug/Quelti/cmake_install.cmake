@@ -1,8 +1,8 @@
-# Install script for directory: C:/Users/beefi/source/repos/Quelti/Quelti
+# Install script for directory: C:/Users/SystemX/Documents/GitHub/QueltiLock/Quelti
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "C:/Users/beefi/source/repos/Quelti/out/install/x64-Debug")
+  set(CMAKE_INSTALL_PREFIX "C:/Users/SystemX/Documents/GitHub/QueltiLock/out/install/x64-Debug")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 

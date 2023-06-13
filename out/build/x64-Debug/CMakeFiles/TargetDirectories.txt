@@ -1,5 +1,5 @@
-C:/Users/beefi/source/repos/Quelti/out/build/x64-Debug/CMakeFiles/edit_cache.dir
-C:/Users/beefi/source/repos/Quelti/out/build/x64-Debug/CMakeFiles/rebuild_cache.dir
-C:/Users/beefi/source/repos/Quelti/out/build/x64-Debug/Quelti/CMakeFiles/Quelti.dir
-C:/Users/beefi/source/repos/Quelti/out/build/x64-Debug/Quelti/CMakeFiles/edit_cache.dir
-C:/Users/beefi/source/repos/Quelti/out/build/x64-Debug/Quelti/CMakeFiles/rebuild_cache.dir
+C:/Users/SystemX/Documents/GitHub/QueltiLock/out/build/x64-Debug/CMakeFiles/edit_cache.dir
+C:/Users/SystemX/Documents/GitHub/QueltiLock/out/build/x64-Debug/CMakeFiles/rebuild_cache.dir
+C:/Users/SystemX/Documents/GitHub/QueltiLock/out/build/x64-Debug/Quelti/CMakeFiles/QueltiLock.dir
+C:/Users/SystemX/Documents/GitHub/QueltiLock/out/build/x64-Debug/Quelti/CMakeFiles/edit_cache.dir
+C:/Users/SystemX/Documents/GitHub/QueltiLock/out/build/x64-Debug/Quelti/CMakeFiles/rebuild_cache.dir

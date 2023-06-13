@@ -1,0 +1,2 @@
+#pragma code_page(65001)
+1 /* CREATEPROCESS_MANIFEST_RESOURCE_ID */ 24 /* RT_MANIFEST */ "C:/Users/SystemX/Documents/GitHub/QueltiLock/out/build/x64-Debug/Quelti/CMakeFiles/QueltiLock.dir/embed.manifest"
