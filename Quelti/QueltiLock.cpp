@@ -21,23 +21,34 @@ int main()
 	GUI Gui;
 	Encryption encryption;
 	Gui.initializationComponents();
-	uint8_t uintChooseMain = Gui.mainScreen(true);
-	std::vector<std::string> encryptionAnswerVector;
+	
+	while (true)
+	{
+		_CLS_;
+		uint8_t uintChooseMain = Gui.mainScreen(true);
+		std::vector<std::string> encryptionAnswerVector;
+		std::vector<std::string> decryptionAnswerVector;
 
-	if (uintChooseMain == 1) {
-		uint8_t encryptionAnswer = Gui.encryptionScreen1();
-		if (encryptionAnswer == 1) {
-			encryptionAnswerVector = Gui.encryptionScreen2();
-			Gui.EncryptionFinalScreen(encryptionAnswerVector);
+		if (uintChooseMain == 1) {
+			uint8_t encryptionAnswer = Gui.encryptionScreen1();
+			if (encryptionAnswer == 1) {
+				encryptionAnswerVector = Gui.encryptionScreen2();
+				Gui.EncryptionFinalScreen(encryptionAnswerVector);
+				encryptionAnswerVector.clear();
+			}
+			else if (encryptionAnswer == 2) {
+
+			}
 		}
-		else if (encryptionAnswer == 2) {
-
+		else if (uintChooseMain == 2) {
+			uint8_t decryptionAnswer = Gui.decryptionScreen1();
+			if (decryptionAnswer == 1) {
+				decryptionAnswerVector = Gui.decryptionScreen2();
+				Gui.DecryptionFinalScreen(decryptionAnswerVector);
+				decryptionAnswerVector.clear();
+			}
 		}
 	}
-	else if (uintChooseMain == 2) {
-		
-	}
-
 
 	return 0;
 }
