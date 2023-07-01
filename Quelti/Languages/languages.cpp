@@ -17,6 +17,10 @@ std::string Languages::english(uint8_t textNumber)
 	case 61:		return "Enter the user's password for decryption:\n\n";
 	case 62:		return "Enter the number of alphabets to generate.\nIf you don't know what it is, skip this step by pressing enter, the default value will be selected:\n\n";
 	case 70:		return "\rThis is your decrypted message!\nThe number of alphabets when generating: ";
+	case 80:		return "Enter the path to the file (absolute or relative):\n\n";
+	case 81:		return "Enter the user's password for encryption:\n\n";
+	case 82:		return "Enter the number of alphabets to generate.\nIf you don't know what it is, skip this step by pressing enter, the default value will be selected:\n\n";
+	case 90:		return "Your file has been successfully encrypted!";
 	}
 }
 

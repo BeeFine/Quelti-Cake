@@ -37,7 +37,8 @@ int main()
 				encryptionAnswerVector.clear();
 			}
 			else if (encryptionAnswer == 2) {
-
+				encryptionAnswerVector = Gui.EncryptionFile2();
+				Gui.EncryptionFileFinal(encryptionAnswerVector);
 			}
 		}
 		else if (uintChooseMain == 2) {
@@ -46,6 +47,9 @@ int main()
 				decryptionAnswerVector = Gui.decryptionScreen2();
 				Gui.DecryptionFinalScreen(decryptionAnswerVector);
 				decryptionAnswerVector.clear();
+			}
+			else if (decryptionAnswer == 2) {
+
 			}
 		}
 	}
