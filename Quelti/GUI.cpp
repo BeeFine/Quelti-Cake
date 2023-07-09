@@ -42,8 +42,7 @@ std::string generated;
 void GUI::initializationComponents()
 {
 	system("color 7");
-	setlocale(LC_CTYPE, "ru");
-	system("chcp 866");
+	setlocale(LC_CTYPE, "");
 	system("title QueltiLock");
 }
 

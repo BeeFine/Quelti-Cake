@@ -1,16 +1,11 @@
 # ninja log v5
-3	584	7083587634405830	Quelti/CMakeFiles/QueltiLock.dir/hash-library-master/sha3.cpp.obj	5541ae3933cb5a70
-2	1298	7083587641525825	Quelti/CMakeFiles/QueltiLock.dir/GUI.cpp.obj	a3233abc1675b7d6
-0	641	7083587634975821	Quelti/CMakeFiles/QueltiLock.dir/Languages/languages.cpp.obj	9a4cd0f4e39fd571
-3	1077	7083587639315830	Quelti/CMakeFiles/QueltiLock.dir/QueltiLock.cpp.obj	7693cc0fbd1ac060
-1298	1365	7083587642215831	Quelti/QueltiLock.exe	ac1f172ba0f18605
 4	740	7106385520320258	Quelti/CMakeFiles/QueltiLock.dir/hash-library-master/sha3.cpp.obj	5541ae3933cb5a70
-2	902	7106385521930261	Quelti/CMakeFiles/QueltiLock.dir/Languages/languages.cpp.obj	9a4cd0f4e39fd571
-3	1144	7106385524340263	Quelti/CMakeFiles/QueltiLock.dir/QueltiLock.cpp.obj	7693cc0fbd1ac060
-0	1601	7106385528880260	Quelti/CMakeFiles/QueltiLock.dir/GUI.cpp.obj	a3233abc1675b7d6
-1601	1689	7106385529810260	Quelti/QueltiLock.exe	ac1f172ba0f18605
-1	1096	7106389126326723	Quelti/CMakeFiles/QueltiLock.dir/QueltiLock.cpp.obj	7693cc0fbd1ac060
 2	1604	7106389131366725	Quelti/CMakeFiles/QueltiLock.dir/GUI.cpp.obj	a3233abc1675b7d6
-1604	1674	7106389132106728	Quelti/QueltiLock.exe	ac1f172ba0f18605
 1	738	7106394642921041	Quelti/CMakeFiles/QueltiLock.dir/Languages/languages.cpp.obj	9a4cd0f4e39fd571
+1	1096	7106389126326723	Quelti/CMakeFiles/QueltiLock.dir/QueltiLock.cpp.obj	7693cc0fbd1ac060
 738	804	7106394643591041	Quelti/QueltiLock.exe	ac1f172ba0f18605
+3	583	7106401744166330	Quelti/CMakeFiles/QueltiLock.dir/hash-library-master/sha3.cpp.obj	5541ae3933cb5a70
+2	744	7106401745766328	Quelti/CMakeFiles/QueltiLock.dir/Languages/languages.cpp.obj	9a4cd0f4e39fd571
+0	1131	7106401749626338	Quelti/CMakeFiles/QueltiLock.dir/QueltiLock.cpp.obj	7693cc0fbd1ac060
+5	1565	7106401753956331	Quelti/CMakeFiles/QueltiLock.dir/GUI.cpp.obj	a3233abc1675b7d6
+1565	1633	7106401754666335	Quelti/QueltiLock.exe	ac1f172ba0f18605
