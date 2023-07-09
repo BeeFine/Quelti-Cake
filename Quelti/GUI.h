@@ -1,4 +1,4 @@
-/* GUI class */
+﻿/* GUI class */
 
 #include <iostream>
 #include <string>
@@ -6,6 +6,8 @@
 #include <random>
 #include <stdint.h>
 #include <thread>
+#include <fstream>
+#include <windows.h>
 
 #include "Languages/languages.h"
 #include "Colors/colors.h"
@@ -24,14 +26,22 @@ public:
 	 uint8_t decryptionScreen1();
 	 std::vector<std::string> decryptionScreen2();
 	 void DecryptionFinalScreen(std::vector<std::string> Answer);
+
+	 std::vector<std::string> EncryptionFile2();
+	 void EncryptionFileFinal(std::vector<std::string> Answer);
+
+	 std::vector<std::string> DecryptionFile2();
+	 void DecryptionFileFinal(std::vector<std::string> Answer);
 };
 
 class Encryption
-{
+{	
 public:
 	void EncryptionMethod(std::vector<std::string> vectorAnswers, std::string* numAlphabets);
 	void DecryptionMethod(std::vector<std::string> vectorAnswers, std::string* numAlphabets);
+	void EncryptionFileMethod(std::vector<std::string> vectorAnswers, std::string* numAlphabets);
+	void DecryptionFileMethod(std::vector<std::string> vectorAnswers, std::string* numAlphabets);
 
 private:
-	const std::string GLOBAL_ALPHABET = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890!@#$%^&*()_+-=[]{}|;':,./<>?`\"\\~ ";
+	const std::string GLOBAL_ALPHABET = " !\"#$%&\'()*+,-./1234567890:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~";
 };

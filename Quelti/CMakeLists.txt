@@ -5,6 +5,9 @@ cmake_minimum_required (VERSION 3.8)
 
 project ("QueltiLock")
 
+set(CMAKE_MSVC_RUNTIME_LIBRARY "MultiThreaded$<$<CONFIG:Debug>:Debug>")
+set(CMAKE_MFC_FLAG 1)
+
 # Добавьте источник в исполняемый файл этого проекта.
 add_executable (QueltiLock "QueltiLock.cpp"  "GUI.h" "GUI.cpp"  "Languages/languages.h" "Languages/languages.cpp" "hash-library-master/sha3.h" "hash-library-master/sha3.cpp")
 
