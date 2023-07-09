@@ -29,6 +29,9 @@ public:
 
 	 std::vector<std::string> EncryptionFile2();
 	 void EncryptionFileFinal(std::vector<std::string> Answer);
+
+	 std::vector<std::string> DecryptionFile2();
+	 void DecryptionFileFinal(std::vector<std::string> Answer);
 };
 
 class Encryption
@@ -40,5 +43,5 @@ public:
 	void DecryptionFileMethod(std::vector<std::string> vectorAnswers, std::string* numAlphabets);
 
 private:
-	const std::string GLOBAL_ALPHABET = "!\"#$%&\'()*+,-./123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~АБВГДЕЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯабвгдежзийклмнопрстуфхцчшщъыьэюя ";
+	const std::string GLOBAL_ALPHABET = " !\"#$%&\'()*+,-./1234567890:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~";
 };

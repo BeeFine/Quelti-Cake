@@ -49,7 +49,8 @@ int main()
 				decryptionAnswerVector.clear();
 			}
 			else if (decryptionAnswer == 2) {
-
+				decryptionAnswerVector = Gui.DecryptionFile2();
+				Gui.DecryptionFileFinal(decryptionAnswerVector);
 			}
 		}
 	}
