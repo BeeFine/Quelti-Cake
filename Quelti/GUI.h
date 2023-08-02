@@ -15,33 +15,27 @@
 class GUI
 {
 public:
-	 void initializationComponents();
-	 void Getline(std::string* strInput);
-	 void waitTime(uint32_t time);
-	 uint8_t mainScreen(bool animation);
-	 uint8_t encryptionScreen1();
-	 std::vector<std::string> encryptionScreen2();
-	 void EncryptionFinalScreen(std::vector<std::string> Answer);
+	GUI(std::vector<std::string> config);
 
-	 uint8_t decryptionScreen1();
-	 std::vector<std::string> decryptionScreen2();
-	 void DecryptionFinalScreen(std::vector<std::string> Answer);
+	void initializationComponents();
+	void Getline(std::string* strInput);
+	uint8_t mainScreen();
+	uint8_t encryptionScreen1();
+	std::vector<std::string> encryptionScreen2();
+	void EncryptionFinalScreen(std::vector<std::string> Answer);
 
-	 std::vector<std::string> EncryptionFile2();
-	 void EncryptionFileFinal(std::vector<std::string> Answer);
+	uint8_t decryptionScreen1();
+	std::vector<std::string> decryptionScreen2();
+	void DecryptionFinalScreen(std::vector<std::string> Answer);
 
-	 std::vector<std::string> DecryptionFile2();
-	 void DecryptionFileFinal(std::vector<std::string> Answer);
-};
+	std::vector<std::string> EncryptionFile2();
+	void EncryptionFileFinal(std::vector<std::string> Answer);
 
-class Encryption
-{	
-public:
-	void EncryptionMethod(std::vector<std::string> vectorAnswers, std::string* numAlphabets);
-	void DecryptionMethod(std::vector<std::string> vectorAnswers, std::string* numAlphabets);
-	void EncryptionFileMethod(std::vector<std::string> vectorAnswers, std::string* numAlphabets);
-	void DecryptionFileMethod(std::vector<std::string> vectorAnswers, std::string* numAlphabets);
+	std::vector<std::string> DecryptionFile2();
+	void DecryptionFileFinal(std::vector<std::string> Answer);
 
 private:
-	const std::string GLOBAL_ALPHABET = " !\"#$%&\'()*+,-./1234567890:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~";
+	const std::string alphabet;
+	const std::string language;
+	std::string animation;
 };
