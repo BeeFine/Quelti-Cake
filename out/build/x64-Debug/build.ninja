@@ -98,10 +98,17 @@ build Quelti\CMakeFiles\QueltiLock.dir\Languages\languages.cpp.obj: CXX_COMPILER
   TARGET_COMPILE_PDB = Quelti\CMakeFiles\QueltiLock.dir\
   TARGET_PDB = Quelti\QueltiLock.pdb
 
-build Quelti\CMakeFiles\QueltiLock.dir\hash-library-master\sha3.cpp.obj: CXX_COMPILER__QueltiLock_Debug C$:\Users\SystemX\Documents\GitHub\QueltiLock\Quelti\hash-library-master\sha3.cpp || cmake_object_order_depends_target_QueltiLock
+build Quelti\CMakeFiles\QueltiLock.dir\EncryptionMethod\hash-library-master\sha3.cpp.obj: CXX_COMPILER__QueltiLock_Debug C$:\Users\SystemX\Documents\GitHub\QueltiLock\Quelti\EncryptionMethod\hash-library-master\sha3.cpp || cmake_object_order_depends_target_QueltiLock
   FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -std:c++20
   OBJECT_DIR = Quelti\CMakeFiles\QueltiLock.dir
-  OBJECT_FILE_DIR = Quelti\CMakeFiles\QueltiLock.dir\hash-library-master
+  OBJECT_FILE_DIR = Quelti\CMakeFiles\QueltiLock.dir\EncryptionMethod\hash-library-master
+  TARGET_COMPILE_PDB = Quelti\CMakeFiles\QueltiLock.dir\
+  TARGET_PDB = Quelti\QueltiLock.pdb
+
+build Quelti\CMakeFiles\QueltiLock.dir\EncryptionMethod\encryption.cpp.obj: CXX_COMPILER__QueltiLock_Debug C$:\Users\SystemX\Documents\GitHub\QueltiLock\Quelti\EncryptionMethod\encryption.cpp || cmake_object_order_depends_target_QueltiLock
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -std:c++20
+  OBJECT_DIR = Quelti\CMakeFiles\QueltiLock.dir
+  OBJECT_FILE_DIR = Quelti\CMakeFiles\QueltiLock.dir\EncryptionMethod
   TARGET_COMPILE_PDB = Quelti\CMakeFiles\QueltiLock.dir\
   TARGET_PDB = Quelti\QueltiLock.pdb
 
@@ -113,7 +120,7 @@ build Quelti\CMakeFiles\QueltiLock.dir\hash-library-master\sha3.cpp.obj: CXX_COM
 #############################################
 # Link the executable Quelti\QueltiLock.exe
 
-build Quelti\QueltiLock.exe: CXX_EXECUTABLE_LINKER__QueltiLock_Debug Quelti\CMakeFiles\QueltiLock.dir\QueltiLock.cpp.obj Quelti\CMakeFiles\QueltiLock.dir\GUI.cpp.obj Quelti\CMakeFiles\QueltiLock.dir\Languages\languages.cpp.obj Quelti\CMakeFiles\QueltiLock.dir\hash-library-master\sha3.cpp.obj
+build Quelti\QueltiLock.exe: CXX_EXECUTABLE_LINKER__QueltiLock_Debug Quelti\CMakeFiles\QueltiLock.dir\QueltiLock.cpp.obj Quelti\CMakeFiles\QueltiLock.dir\GUI.cpp.obj Quelti\CMakeFiles\QueltiLock.dir\Languages\languages.cpp.obj Quelti\CMakeFiles\QueltiLock.dir\EncryptionMethod\hash-library-master\sha3.cpp.obj Quelti\CMakeFiles\QueltiLock.dir\EncryptionMethod\encryption.cpp.obj
   FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1
   LINK_FLAGS = /machine:x64 /debug /INCREMENTAL /subsystem:console
   LINK_LIBRARIES = kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib

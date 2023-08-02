@@ -71,11 +71,6 @@ public:
 		}
 	}
 
-	~Colors()
-	{
-		CloseHandle(hConsoleOutput);
-	}
-
 };
 #else
 #error "This library for Windows OS"

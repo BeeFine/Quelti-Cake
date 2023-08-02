@@ -1,5 +1,4 @@
-﻿// QueltiLock.cpp: определяет точку входа для приложения.
-
+﻿/* MAIN */
 
 #define _CLS_ system("cls")
 
@@ -7,25 +6,32 @@
 #include <string>
 #include <vector>
 #include <random>
-#include <stdint.h>
+#include <Windows.h>
 
 #include "Colors/colors.h"
+#include "EncryptionMethod/encryption.h"
 #include "GUI.h"
+#include "nlohmann/json.hpp"
 
 using std::cout;
 using std::cin;
 using std::endl;
 
+void jsonConfig(std::vector<std::string>* config);
+void exitCode(int code);
+
 int main()
 {
-	GUI Gui;
-	Encryption encryption;
+	std::vector<std::string> config;
+	jsonConfig(&config);
+
+	GUI Gui(config);
 	Gui.initializationComponents();
-	
+
 	while (true)
 	{
 		_CLS_;
-		uint8_t uintChooseMain = Gui.mainScreen(true);
+		uint8_t uintChooseMain = Gui.mainScreen();
 		std::vector<std::string> encryptionAnswerVector;
 		std::vector<std::string> decryptionAnswerVector;
 
@@ -56,4 +62,66 @@ int main()
 	}
 
 	return 0;
+}
+
+void jsonConfig(std::vector<std::string>* config)
+{
+	/*
+		config:
+			0: alphabet		[ ENCRYPTION ]
+			1: animations	[ GUI ]
+			2: language		[ GUI ]
+	*/
+
+	using namespace nlohmann;
+
+	Colors color;
+	std::ifstream ifstreamConfig("config.json");
+	json configJson = json::parse(ifstreamConfig);
+
+	/* File config.json */
+	if (configJson.empty()) exitCode(1);
+
+	/* ALPHABET */
+	if ((configJson["ALPHABET"]).size() < 3 ) {
+		config->push_back(configJson["ALPHABET"]);
+	}
+	else exitCode(2);
+
+	/* animations */
+	if (configJson["animations"] != "true" && configJson["animations"] != "false") exitCode(3);
+	else config->push_back(configJson["animations"]);
+
+	/* language */
+	if (configJson["language"] != "ru" && configJson["language"] != "en") exitCode(4);
+	else config->push_back(configJson["language"]);
+
+	/* setLocale */
+	if (configJson["setLocale"] != "ru" && configJson["setLocale"] != "en") exitCode(5);
+	else {
+		std::string cache = configJson["setLocale"];
+		setlocale(LC_CTYPE, cache.c_str());
+	}
+
+
+}
+
+
+void exitCode(int code)
+{
+	Colors color;
+
+	_CLS_;
+	color.set_intensity(true);
+	color.set_color(CL_RED);
+	cout << "Error! Code ";
+	color.set_color(CL_CYAN);
+	cout << code << ".";
+	color.set_color(CL_RED);
+	cout << "\nRead more at ";
+	color.set_color(CL_CYAN);
+	cout << "https://github.com/BeeFine/QueltiLock" << endl << endl;
+	color.clear();
+	system("pause");
+	exit(code);
 }
