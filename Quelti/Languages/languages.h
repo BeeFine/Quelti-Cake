@@ -8,6 +8,7 @@ private:
 
 	std::string english(uint8_t textNumber);
 	std::string russia(uint8_t textNumber);
+	std::string ukraine(uint8_t textNumber);
 
 public:
 	Languages(std::string language);

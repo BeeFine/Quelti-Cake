@@ -1,6 +1,5 @@
 #define _CLS_ system("cls")
 
-#include "hash-library-master/sha3.h"
 #include "encryption.h"
 #include "Colors/colors.h"
 
@@ -45,7 +44,6 @@ Encryption::Encryption(std::string alphabet)
 
 void Encryption::EncryptionMethod(std::vector<std::string> vectorAnswers, std::string* numAlphabets)
 {
-	SHA3 sha3;
 	Colors color;
 
 	std::vector<uint64_t> sortkeys;
@@ -57,18 +55,12 @@ void Encryption::EncryptionMethod(std::vector<std::string> vectorAnswers, std::s
 	std::string message = vectorAnswers[2]; // User's message
 
 	std::string strSeed; // Int Seed
-	std::string strHash = sha3(password); // SHA3 Hash
 
 	if (atoi(numsAlphabets.c_str()) == 0) numsAlphabets = "2048"; // Default value
 
-	// Converting hash
-	std::string alphabet = "abcdefghijklmnopqrstuvwxyz1234567890";
-
-	for (char x : strHash)
+	for (char x : password)
 	{
-		auto intCache = alphabet.find(x);
-		intCache += 10;
-		strSeed += std::to_string(intCache);
+		strSeed += std::to_string(int(x));
 	}
 
 
@@ -141,7 +133,6 @@ void Encryption::EncryptionMethod(std::vector<std::string> vectorAnswers, std::s
 
 void Encryption::DecryptionMethod(std::vector<std::string> vectorAnswers, std::string* numAlphabets)
 {
-	SHA3 sha3;
 	Colors color;
 
 	std::vector<uint64_t> sortkeys;
@@ -153,20 +144,13 @@ void Encryption::DecryptionMethod(std::vector<std::string> vectorAnswers, std::s
 	std::string message = vectorAnswers[2]; // User's message
 
 	std::string strSeed; // Int Seed
-	std::string strHash = sha3(password); // SHA3 Hash
 
 	if (atoi(numsAlphabets.c_str()) == 0) numsAlphabets = "2048"; // Default value
 
-	// Converting hash
-	std::string alphabet = "abcdefghijklmnopqrstuvwxyz1234567890";
-
-	for (char x : strHash)
+	for (char x : password)
 	{
-		auto intCache = alphabet.find(x);
-		intCache += 10;
-		strSeed += std::to_string(intCache);
+		strSeed += std::to_string(int(x));
 	}
-
 
 	// Converting seed
 	strSeed += numsAlphabets;
@@ -237,7 +221,6 @@ void Encryption::DecryptionMethod(std::vector<std::string> vectorAnswers, std::s
 
 void Encryption::EncryptionFileMethod(std::vector<std::string> vectorAnswers, std::string* numAlphabets)
 {
-	SHA3 sha3;
 	Colors color;
 
 	std::ifstream input(vectorAnswers[0], std::ios::in/*, std::ios_base::binary*/);
@@ -253,18 +236,12 @@ void Encryption::EncryptionFileMethod(std::vector<std::string> vectorAnswers, st
 
 	std::string sizeLines;
 	std::string strSeed; // Int Seed
-	std::string strHash = sha3(password); // SHA3 Hash
 
 	if (atoi(numsAlphabets.c_str()) == 0) numsAlphabets = "2048"; // Default value
 
-	// Converting hash
-	std::string alphabet = "abcdefghijklmnopqrstuvwxyz1234567890";
-
-	for (char x : strHash)
+	for (char x : password)
 	{
-		auto intCache = alphabet.find(x);
-		intCache += 10;
-		strSeed += std::to_string(intCache);
+		strSeed += std::to_string(int(x));
 	}
 
 	// Converting seed
@@ -360,7 +337,6 @@ void Encryption::EncryptionFileMethod(std::vector<std::string> vectorAnswers, st
 
 void Encryption::DecryptionFileMethod(std::vector<std::string> vectorAnswers, std::string* numAlphabets)
 {
-	SHA3 sha3;
 	Colors color;
 
 	std::ifstream input(vectorAnswers[0], std::ios::in/*, std::ios_base::binary*/);
@@ -375,18 +351,12 @@ void Encryption::DecryptionFileMethod(std::vector<std::string> vectorAnswers, st
 
 	std::string sizeLines;
 	std::string strSeed; // Int Seed
-	std::string strHash = sha3(password); // SHA3 Hash
 
 	if (atoi(numsAlphabets.c_str()) == 0) numsAlphabets = "2048"; // Default value
 
-	// Converting hash
-	std::string alphabet = "abcdefghijklmnopqrstuvwxyz1234567890";
-
-	for (char x : strHash)
+	for (char x : password)
 	{
-		auto intCache = alphabet.find(x);
-		intCache += 10;
-		strSeed += std::to_string(intCache);
+		strSeed += std::to_string(int(x));
 	}
 
 	// Converting seed
