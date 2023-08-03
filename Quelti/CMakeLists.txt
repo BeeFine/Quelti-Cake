@@ -9,7 +9,7 @@ set(CMAKE_MSVC_RUNTIME_LIBRARY "MultiThreaded$<$<CONFIG:Debug>:Debug>")
 set(CMAKE_MFC_FLAG 1)
 
 # Добавьте источник в исполняемый файл этого проекта.
-add_executable (QueltiLock "QueltiLock.cpp"  "GUI.h" "GUI.cpp"  "Languages/languages.h" "Languages/languages.cpp" "EncryptionMethod/hash-library-master/sha3.h" "EncryptionMethod/hash-library-master/sha3.cpp" "EncryptionMethod/encryption.h" "EncryptionMethod/encryption.cpp" "EncryptionMethod/Colors/colors.h" "Colors/colors.h")
+add_executable (QueltiLock "QueltiLock.cpp"  "GUI.h" "GUI.cpp"  "Languages/languages.h" "Languages/languages.cpp" "EncryptionMethod/encryption.h" "EncryptionMethod/encryption.cpp" "EncryptionMethod/Colors/colors.h" "Colors/colors.h")
 
 if (CMAKE_VERSION VERSION_GREATER 3.12)
   set_property(TARGET QueltiLock PROPERTY CXX_STANDARD 20)

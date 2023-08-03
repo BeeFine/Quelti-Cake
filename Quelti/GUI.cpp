@@ -10,7 +10,6 @@
 #define _EncryptionFinalScreen_			40
 
 #define _DecryptionScreen1_				50
-
 #define _DecryptionScreen2_MESSAGE		60
 #define _DecryptionScreen2_PASSWORD		61
 #define _DecryptionScreen2_ALPHABETS	62

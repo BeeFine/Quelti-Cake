@@ -61,6 +61,8 @@ int main()
 		}
 	}
 
+	
+
 	return 0;
 }
 
@@ -77,10 +79,9 @@ void jsonConfig(std::vector<std::string>* config)
 
 	Colors color;
 	std::ifstream ifstreamConfig("config.json");
-	json configJson = json::parse(ifstreamConfig);
+	if (!ifstreamConfig) exitCode(1);
 
-	/* File config.json */
-	if (configJson.empty()) exitCode(1);
+	json configJson = json::parse(ifstreamConfig);
 
 	/* ALPHABET */
 	if ((configJson["ALPHABET"]).size() < 3 ) {
@@ -93,17 +94,22 @@ void jsonConfig(std::vector<std::string>* config)
 	else config->push_back(configJson["animations"]);
 
 	/* language */
-	if (configJson["language"] != "ru" && configJson["language"] != "en") exitCode(4);
+	if (configJson["language"] != "ru" && configJson["language"] != "en" && configJson["setLocale"] != "uk") exitCode(4);
 	else config->push_back(configJson["language"]);
 
 	/* setLocale */
-	if (configJson["setLocale"] != "ru" && configJson["setLocale"] != "en") exitCode(5);
+	if (configJson["setLocale"] == "uk")
+	{
+		SetConsoleCP(1251);
+		SetConsoleOutputCP(1251);
+		return;
+	}
+
+	if (configJson["setLocale"] != "ru" && configJson["setLocale"] != "en" && configJson["setLocale"] == "uk") exitCode(5);
 	else {
 		std::string cache = configJson["setLocale"];
 		setlocale(LC_CTYPE, cache.c_str());
 	}
-
-
 }
 
 
