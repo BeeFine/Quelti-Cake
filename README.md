@@ -1,15 +1,15 @@
-![QueltiLock.Logo](https://i.ibb.co/fFkMKH2/Quelti-Shapka.png)
+![Quelti.Logo](https://i.ibb.co/mTSZxCw/Quelti2.jpg)
 
 This project is designed to better protect passwords and personal data locally. Wish me luck in the development of the project;)
 
 # Install
-1. Download the latest release of QueltiLock
+1. Download the latest release of Quelti Cake
 2. Install Visual C++ (a suitable version is supplied with the release)
 3. Move ``QueltiLock.exe`` and ``config.json`` to any convenient folder
 4. Run ``QueltiLock.exe``
 
 # About
-Some time ago I decided to create my own encryption method. At first it was a simple script that made decryption impossible without 3 files. Soon I started to further improve the algorithm, and after half a year I completely rewrote the encryption algorithm three times. A year later I created **QLTP**, a method that cannot be cracked using bruteforce, frequency analysis, and other popular cracking methods. It is a symmetric encryption method that uses a password and a number of alphabets as a key. The decryption of the text depends on them. The higher the number of alphabets, the longer decryption and encryption will take. More details about this method are written somewhere below:) Its main advantages are that it cannot be cracked using bruteforce. Therefore, it is perfect for protecting information on local computers.
+Developed from an initial simple script, Quelti Cake has evolved into a robust encryption tool designed for local data protection. After substantial improvements and multiple algorithm rewrites, QLTP was created, a method immune to brute force, frequency analysis, and other standard cracking techniques. It's a symmetric encryption method using a password and a set of alphabets as keys.
 
 ## List of functions
 - Text encryption
@@ -17,7 +17,7 @@ Some time ago I decided to create my own encryption method. At first it was a si
 - File encryption
 - File decryption
 
-## QLTP - Quelti protection
+## CAKE - Customizable Adaptive Key Environment
 
 Advantage  | Disadvantage
 ----------------|----------------------
@@ -26,6 +26,9 @@ Changing the encryption and decryption speed | Problems may arise when using uns
 
 ### Advantage
 You can decide yourself on how many alphabets will be generated when encrypting. By default, 2048 alphabets are generated, but you can change this value yourself as an additional security measure when encrypting. If the wrong number of alphabets is entered when decrypting, the key generation range will change, which will affect the decryption result. This is also an excellent protection against brute force, as with a value of 1 000 000, decrypting one message can take quite a long time. Note that a large number of alphabets takes up more RAM.
+
+**Brute Force Protection:** Adjust the number of alphabets generated during encryption for enhanced security. The default setting is 2048 alphabets. <br>
+**Speed Flexibility:** The encryption and decryption speed can be altered.
 
 ### Disadvantage
 To implement this technology, I use std::mt19937, which generates numbers based on the password received as a result of hashing. The problem is that when using different random methods, we can get completely different values even if the password matches.
